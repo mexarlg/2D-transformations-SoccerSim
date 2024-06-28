@@ -18,3 +18,4 @@ struct flagKnowns
 
 void relative2Abssolute(vector<shared_ptr<flagKnowns>> &flags);
 void abs2rel(vector<shared_ptr<flagKnowns>> &flags, float &x, float &y, float &alpha);
+void positionBall(vector<shared_ptr<flagKnowns>> &flags, float &x, float &y);

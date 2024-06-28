@@ -184,3 +184,8 @@ float direccion2 = -(180/M_PI)*theta2;
 cout << "dir1º: " << direccion1 << "\t" << "dir2º:" << direccion2 << endl; 
 
 }
+
+void positionBall(vector<shared_ptr<flagKnowns>> &flags, float &x, float &y)
+{
+    
+}
