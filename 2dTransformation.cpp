@@ -131,6 +131,9 @@ cout << "xPlayer: " << x_player << "\t" << "yPlayer: " << y_player << endl;
 void abs2rel(vector<shared_ptr<flagKnowns>> &flags, float &x, float &y, float xBall, float yBall)
 {
 
+// Function estimates the alpha angle with the position of the ball, which is not correct as the
+// head direction will not be really coincident
+
 float x1 = flags.at(0)->x;
 float y1 = flags.at(0)->y;
 
@@ -146,7 +149,7 @@ float dx2 = x2 - x;
 float dyBall = yBall - y;
 float dxBall = xBall - x;
 
-
+// Try to not have small numbers
 if(dy1 <= 0.01){
     dy1 = 0;
 }else if(dx1 <= 0.01){
@@ -174,6 +177,7 @@ float beta2 = atan2(dy2,dx2);
 float theta1 = beta1 - alpha;
 float theta2 = beta2 - alpha;
 
+// directions are negative ccw
 float direccion1 = -(180/M_PI)*theta1;
 float direccion2 = -(180/M_PI)*theta2;
 
