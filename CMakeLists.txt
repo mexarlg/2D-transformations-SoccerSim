@@ -8,8 +8,3 @@ set(SOURCES
 
 # Add your executable target
 add_executable(MyProject ${SOURCES})
-# Add your include directories here
-target_include_directories(MyProject PUBLIC include)
-
-# Add your library dependencies here
-target_link_libraries(MyProject PUBLIC my_library)

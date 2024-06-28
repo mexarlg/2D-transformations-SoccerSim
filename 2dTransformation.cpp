@@ -127,3 +127,56 @@ else                        // use solution 2 if error2 is smaller
 cout << "xPlayer: " << x_player << "\t" << "yPlayer: " << y_player << endl;
 
 }
+
+void abs2rel(vector<shared_ptr<flagKnowns>> &flags, float &x, float &y, float xBall, float yBall)
+{
+
+float x1 = flags.at(0)->x;
+float y1 = flags.at(0)->y;
+
+float x2 = flags.at(1)->x;
+float y2 = flags.at(1)->y;
+
+float dy1 = y1 - y;
+float dx1 = x1 - x;
+
+float dy2 = y2 - y;
+float dx2 = x2 - x;
+
+float dyBall = yBall - y;
+float dxBall = xBall - x;
+
+
+if(dy1 <= 0.01){
+    dy1 = 0;
+}else if(dx1 <= 0.01){
+    dx1 = 0;
+}
+
+if(dy2 <= 0.01){
+    dy2 = 0;
+}else if(dx2 <= 0.01){
+    dx2 = 0;
+}
+
+if(dyBall <= 0.01){
+    dyBall = 0;
+}else if(dx2 <= 0.01){
+    dxBall = 0;
+}
+
+float alpha = atan2(dyBall, dxBall);
+
+// beta = theta + alpha [rad]
+float beta1 = atan2(dy1,dx1);
+float beta2 = atan2(dy2,dx2);
+
+float theta1 = beta1 - alpha;
+float theta2 = beta2 - alpha;
+
+float direccion1 = -(180/M_PI)*theta1;
+float direccion2 = -(180/M_PI)*theta2;
+
+cout << "dir1º: " << direccion1 << "\t" << "dir2º:" << direccion2 << endl; 
+
+}
