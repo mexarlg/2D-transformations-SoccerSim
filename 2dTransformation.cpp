@@ -185,7 +185,14 @@ cout << "dir1º: " << direccion1 << "\t" << "dir2º:" << direccion2 << endl;
 
 }
 
-void positionBall(vector<shared_ptr<flagKnowns>> &flags, float &x, float &y)
+void positionBall(vector<shared_ptr<flagKnowns>> &flags, float &xp, float &yp, float distBallPlayer)
 {
-    
+
+// First flag declaration
+float theta1 = -flags.at(0)->direccion;
+float d1 = flags.at(0)->distancia;
+float x1 = flags.at(0)->x;
+float y1 = flags.at(0)->y;
+
+
 }
