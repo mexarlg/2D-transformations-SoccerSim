@@ -185,7 +185,7 @@ cout << "dir1º: " << direccion1 << "\t" << "dir2º:" << direccion2 << endl;
 
 }
 
-void positionBall(vector<shared_ptr<flagKnowns>> &flags, float &xp, float &yp, float distBallPlayer)
+void positionBall(vector<shared_ptr<flagKnowns>> &flags, float &xp, float &yp, float distBallPlayer, float thetaBall)
 {
 
 // First flag declaration
@@ -193,6 +193,12 @@ float theta1 = -flags.at(0)->direccion;
 float d1 = flags.at(0)->distancia;
 float x1 = flags.at(0)->x;
 float y1 = flags.at(0)->y;
+
+// 3rd side of Triangle
+float a = sqrt(d1*d1 + distBallPlayer*distBallPlayer -2*d1*distBallPlayer*cos((M_PI/180)*(theta1 - thetaBall)));
+float beta = atan2(x1-xp,y1-yp);
+
+float gamma = beta + (M_PI/180)*(theta1 - thetaBall);
 
 
 }
